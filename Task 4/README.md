@@ -83,7 +83,8 @@ curl -X POST http://127.0.0.1:5000/users \
 #### Option C: Using Postman
 See `POSTMAN_GUIDE.md` for detailed Postman instructions and collection.
 
- **Note**: This is an educational project. All data is stored in run time so data will be lost when the server stops or restarts. For production use, consider adding authentication, database persistence, proper logging, and security measures.
+> [!NOTE] 
+> **Note** This is an educational project. All data is stored in run time so data will be lost when the server stops or restarts. For production use, consider adding authentication, database persistence, proper logging, and security measures.
 
 ## 💡 API Endpoints Documentation
 
