@@ -58,6 +58,8 @@ def main():
             if num1 is None or num2 is None:
                 continue
             
+            operation = ""
+            result = None
             if choice == '1':
                 result = add(num1, num2)
                 operation = "+"
