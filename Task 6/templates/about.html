@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+
+{% block title %}About - Portfolio{% endblock %}
+
+{% block content %}
+<!-- About Hero -->
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero-content" data-aos="fade-up">
+            <h1 class="page-title">About Me</h1>
+            <p class="page-description">Get to know more about my skills, experience, and passion for development</p>
+        </div>
+    </div>
+</section>
+
+<!-- About Content -->
+<section class="about-section">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image" data-aos="fade-right">
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <div class="avatar-circle">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                    </div>
+                    <h3 class="profile-name">Full Stack Developer</h3>
+                    <p class="profile-role">Python | Flask | Django | Data Science</p>
+                    <div class="profile-social">
+                        <a href="https://github.com/soumya3969" class="profile-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/soumya3968" class="profile-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:soumya3969@example.com" class="profile-link" target="_blank">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-text" data-aos="fade-left">
+                <h2 class="about-title">
+                    <span class="gradient-text">Passionate Developer</span> Creating Digital Solutions
+                </h2>
+                <p class="about-description">
+                    I'm a dedicated full-stack developer with a strong focus on Python and modern web technologies. 
+                    My journey in programming has led me to explore various domains including web development, 
+                    data analysis, and API design.
+                </p>
+                <p class="about-description">
+                    I believe in writing clean, maintainable code and creating user experiences that are both 
+                    functional and delightful. When I'm not coding, I'm learning new technologies, contributing 
+                    to open-source projects, or sharing knowledge with the developer community.
+                </p>
+                
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Problem-solving mindset</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Clean code advocate</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Continuous learner</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Team collaborator</span>
+                    </div>
+                </div>
+                
+                <a href="{{ url_for('contact') }}" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Get In Touch
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="skills-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">
+                <span class="title-icon"><i class="fas fa-code"></i></span>
+                Technical Skills
+            </h2>
+            <p class="section-subtitle">Technologies and tools I use to build amazing projects</p>
+        </div>
+        
+        <div class="skills-container">
+            {% for category, skill_list in skills.items() %}
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+                <h3 class="category-title">
+                    <i class="fas fa-{% if category == 'Languages' %}laptop-code{% elif category == 'Frameworks' %}layer-group{% elif category == 'Tools' %}toolbox{% else %}lightbulb{% endif %}"></i>
+                    {{ category }}
+                </h3>
+                <div class="skill-tags">
+                    {% for skill in skill_list %}
+                    <span class="skill-tag">{{ skill }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Experience Section -->
+<section class="experience-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">
+                <span class="title-icon"><i class="fas fa-briefcase"></i></span>
+                Experience
+            </h2>
+            <p class="section-subtitle">My professional journey</p>
+        </div>
+        
+        <div class="timeline">
+            {% for exp in experience %}
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">{{ exp.role }}</h3>
+                        <span class="timeline-period">
+                            <i class="fas fa-calendar-alt"></i> {{ exp.period }}
+                        </span>
+                    </div>
+                    <p class="timeline-description">{{ exp.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Achievements Section -->
+<section class="achievements-section">
+    <div class="container">
+        <div class="achievements-grid">
+            <div class="achievement-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="achievement-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3 class="achievement-number">6+</h3>
+                <p class="achievement-label">Completed Projects</p>
+            </div>
+            
+            <div class="achievement-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="achievement-icon">
+                    <i class="fas fa-code-branch"></i>
+                </div>
+                <h3 class="achievement-number">100+</h3>
+                <p class="achievement-label">Commits</p>
+            </div>
+            
+            <div class="achievement-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="achievement-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3 class="achievement-number">15+</h3>
+                <p class="achievement-label">Skills Mastered</p>
+            </div>
+            
+            <div class="achievement-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="achievement-icon">
+                    <i class="fas fa-coffee"></i>
+                </div>
+                <h3 class="achievement-number">∞</h3>
+                <p class="achievement-label">Cups of Coffee</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+    });
+</script>
+{% endblock %}

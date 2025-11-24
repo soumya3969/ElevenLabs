@@ -1,0 +1,289 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - Portfolio{% endblock %}
+
+{% block content %}
+<!-- Contact Hero -->
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero-content" data-aos="fade-up">
+            <h1 class="page-title">Get In Touch</h1>
+            <p class="page-description">Have a question or want to work together? I'd love to hear from you!</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-grid">
+            <!-- Contact Information -->
+            <div class="contact-info" data-aos="fade-right">
+                <h2 class="contact-info-title">Let's Connect</h2>
+                <p class="contact-info-text">
+                    Feel free to reach out for collaborations, opportunities, or just a friendly hello!
+                </p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="method-content">
+                            <h4>Email</h4>
+                            <a href="mailto:srmhnt2001@gmail.com">srmhnt2001@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="method-content">
+                            <h4>Location</h4>
+                            <p>Available Globally (Remote)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="method-content">
+                            <h4>Response Time</h4>
+                            <p>Within 24-48 hours</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-social">
+                    <h4>Connect on Social Media</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/soumya3969" class="social-icon" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/soumya3968" class="social-icon" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com" class="social-icon" target="_blank" rel="noopener">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="mailto:srmhnt2001@gmail.com" class="social-icon">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper" data-aos="fade-left">
+                <form class="contact-form" id="contactForm" method="POST" action="{{ url_for('contact') }}">
+                    <div class="form-header">
+                        <h3>Send Me a Message</h3>
+                        <p>Fill out the form below and I'll get back to you as soon as possible</p>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name" class="form-label">
+                                <i class="fas fa-user"></i> Your Name
+                            </label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                class="form-input" 
+                                placeholder="John Doe"
+                                required
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">
+                                <i class="fas fa-envelope"></i> Your Email
+                            </label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                class="form-input" 
+                                placeholder="john@example.com"
+                                required
+                            >
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="form-label">
+                            <i class="fas fa-tag"></i> Subject
+                        </label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            name="subject" 
+                            class="form-input" 
+                            placeholder="Project Inquiry"
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">
+                            <i class="fas fa-comment"></i> Message
+                        </label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            class="form-textarea" 
+                            rows="6" 
+                            placeholder="Tell me about your project or inquiry..."
+                            required
+                        ></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">
+                <span class="title-icon"><i class="fas fa-question-circle"></i></span>
+                Frequently Asked Questions
+            </h2>
+        </div>
+        
+        <div class="faq-grid">
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="faq-question">
+                    <i class="fas fa-chevron-right"></i>
+                    <h4>What services do you offer?</h4>
+                </div>
+                <div class="faq-answer">
+                    <p>I specialize in web development, REST API design, data analysis, and custom Python solutions.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="faq-question">
+                    <i class="fas fa-chevron-right"></i>
+                    <h4>What's your typical response time?</h4>
+                </div>
+                <div class="faq-answer">
+                    <p>I typically respond to inquiries within 24-48 hours on business days.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="faq-question">
+                    <i class="fas fa-chevron-right"></i>
+                    <h4>Do you work on remote projects?</h4>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! I'm available for remote work and collaborations worldwide.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="faq-question">
+                    <i class="fas fa-chevron-right"></i>
+                    <h4>Can I see more of your work?</h4>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! Check out my <a href="{{ url_for('projects') }}">projects page</a> to see my portfolio.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+    // Initialize AOS
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    }
+    
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Contact page JavaScript loaded');
+        
+        // Form validation and animation
+        const form = document.getElementById('contactForm');
+        if (form) {
+            const inputs = form.querySelectorAll('.form-input, .form-textarea');
+            
+            // Add focus animations
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.classList.add('focused');
+                });
+                
+                input.addEventListener('blur', function() {
+                    if (!this.value) {
+                        this.parentElement.classList.remove('focused');
+                    }
+                });
+            });
+        }
+        
+        // FAQ accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        console.log('Found FAQ items:', faqItems.length);
+        
+        if (faqItems.length > 0) {
+            faqItems.forEach((item, index) => {
+                const question = item.querySelector('.faq-question');
+                if (question) {
+                    question.style.cursor = 'pointer';
+                    
+                    question.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        console.log('Clicked FAQ item:', index);
+                        
+                        const wasActive = item.classList.contains('active');
+                        console.log('Was active before click:', wasActive);
+                        
+                        // Close all items first
+                        faqItems.forEach(i => {
+                            i.classList.remove('active');
+                        });
+                        
+                        // If it wasn't active before, activate it
+                        if (!wasActive) {
+                            item.classList.add('active');
+                            console.log('Activated FAQ item:', index);
+                        } else {
+                            console.log('Deactivated FAQ item:', index);
+                        }
+                        
+                        // Log the answer element
+                        const answer = item.querySelector('.faq-answer');
+                        if (answer) {
+                            console.log('Answer element found, display:', window.getComputedStyle(answer).maxHeight);
+                        }
+                    }, false);
+                }
+            });
+            console.log('FAQ accordion initialized');
+        } else {
+            console.error('No FAQ items found!');
+        }
+    });
+</script>
+{% endblock %}

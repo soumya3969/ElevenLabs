@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Portfolio{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-right">
+                <p class="hero-greeting">
+                    <i class="fas fa-hand-sparkles"></i> Hello, I'm
+                </p>
+                <h1 class="hero-title">
+                    <span class="gradient-text typing-effect">Full Stack Developer</span>
+                </h1>
+                <p class="hero-description">
+                    I craft beautiful, functional, and scalable web applications using modern technologies. 
+                    Passionate about clean code, great user experience, and continuous learning.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-count="6">0</h3>
+                        <p class="stat-label">Projects</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-count="5">0</h3>
+                        <p class="stat-label">Technologies</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-count="2">0</h3>
+                        <p class="stat-label">Years Exp.</p>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="{{ url_for('projects') }}" class="btn btn-primary">
+                        <i class="fas fa-code"></i> View Projects
+                    </a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i> Get in Touch
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image" data-aos="fade-left">
+                <div class="image-wrapper">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <span class="window-dot dot-red"></span>
+                            <span class="window-dot dot-yellow"></span>
+                            <span class="window-dot dot-green"></span>
+                        </div>
+                        <div class="window-body">
+                            <pre class="code-snippet">
+<span class="code-keyword">class</span> <span class="code-class">Developer</span>:
+    <span class="code-keyword">def</span> <span class="code-function">__init__</span>(<span class="code-param">self</span>):
+        <span class="code-param">self</span>.<span class="code-property">name</span> = <span class="code-string">"Portfolio"</span>
+        <span class="code-param">self</span>.<span class="code-property">skills</span> = [
+            <span class="code-string">"Python"</span>,
+            <span class="code-string">"Flask"</span>,
+            <span class="code-string">"JavaScript"</span>,
+            <span class="code-string">"Data Science"</span>
+        ]
+    
+    <span class="code-keyword">def</span> <span class="code-function">build_awesome</span>(<span class="code-param">self</span>):
+        <span class="code-keyword">return</span> <span class="code-string">"✨ Magic!"</span>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <div class="mouse">
+            <div class="wheel"></div>
+        </div>
+        <p>Scroll Down</p>
+    </div>
+</section>
+
+<!-- Skills Highlight Section -->
+<section class="skills-highlight">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">
+                <span class="title-icon"><i class="fas fa-star"></i></span>
+                Core Competencies
+            </h2>
+            <p class="section-subtitle">Technologies I work with</p>
+        </div>
+        
+        <div class="skills-grid">
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="skill-icon">
+                    <i class="fab fa-python"></i>
+                </div>
+                <h3>Python Development</h3>
+                <p>Backend development, automation, and data analysis with Python</p>
+            </div>
+            
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="skill-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Web Development</h3>
+                <p>Building responsive websites with Flask, HTML, CSS, and JavaScript</p>
+            </div>
+            
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="skill-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Data Analysis</h3>
+                <p>Data visualization and insights using Pandas, NumPy, and Matplotlib</p>
+            </div>
+            
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="skill-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3>REST APIs</h3>
+                <p>Designing and implementing RESTful web services</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content" data-aos="fade-up">
+            <h2 class="cta-title">Let's Build Something Amazing Together</h2>
+            <p class="cta-text">Have a project in mind? Let's discuss how I can help bring your ideas to life.</p>
+            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-large">
+                <i class="fas fa-rocket"></i> Start a Conversation
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+    // Initialize AOS (Animate On Scroll)
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+    });
+    
+    // Animated counters
+    const counters = document.querySelectorAll('.stat-number');
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-count'));
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+        
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                counter.textContent = Math.floor(current) + '+';
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target + '+';
+            }
+        };
+        
+        // Start counting when element is in view
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                updateCounter();
+                observer.disconnect();
+            }
+        });
+        observer.observe(counter);
+    });
+</script>
+{% endblock %}
