@@ -40,8 +40,10 @@ A modern, responsive portfolio website built with Flask featuring advanced UI/UX
 ## 📋 Requirements
 
 - Python 3.8 or higher
-- Flask 3.0.0
+- Flask 3.0.0 or higher
 - Modern web browser (Chrome, Firefox, Safari, Edge)
+
+**Note**: This project only requires Flask. No additional Python packages needed.
 
 ## 🔧 Installation
 
@@ -65,6 +67,9 @@ venv\Scripts\activate
 ### 3. Install Dependencies
 ```bash
 pip install -r requirements.txt
+
+# Or install Flask directly
+pip install flask
 ```
 
 ### 4. Run the Application
@@ -80,13 +85,13 @@ The application will start on `http://127.0.0.1:5000/`
 Task 6/
 ├── app.py                      # Flask application & routes
 ├── requirements.txt            # Python dependencies
+├── requirement.md              # Project requirements
 ├── README.md                   # Project documentation
 ├── static/                     # Static assets
 │   ├── css/
-│   │   └── style.css          # Main stylesheet (1000+ lines)
-│   ├── js/
-│   │   └── script.js          # JavaScript functionality
-│   └── images/                # Image assets (optional)
+│   │   └── style.css          # Main stylesheet (2000+ lines)
+│   └── js/
+│       └── script.js          # JavaScript functionality
 └── templates/                  # Jinja2 templates
     ├── base.html              # Base template with navbar & footer
     ├── index.html             # Homepage
@@ -202,8 +207,15 @@ docker run -p 5000:5000 portfolio-website
 
 ### Deploy to Heroku
 ```bash
+# Install gunicorn
+pip install gunicorn
+
 # Create Procfile
 echo "web: gunicorn app:app" > Procfile
+
+# Create requirements.txt
+echo "Flask==3.0.0" > requirements.txt
+echo "gunicorn" >> requirements.txt
 
 # Initialize git and deploy
 git init
@@ -216,11 +228,11 @@ git push heroku main
 ### Deploy to PythonAnywhere
 1. Upload files to PythonAnywhere
 2. Create virtual environment
-3. Install requirements
+3. Install Flask: `pip install flask`
 4. Configure WSGI file:
 ```python
 import sys
-path = '/home/username/Task_6'
+path = '/home/username/Task 6'
 if path not in sys.path:
     sys.path.append(path)
 
@@ -294,7 +306,7 @@ This project is licensed under the MIT License - see below for details:
 ```
 MIT License
 
-Copyright (c) 2024
+Copyright (c) 2025
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -317,10 +329,9 @@ SOFTWARE.
 
 ## 👤 Author
 
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
+**Soumya**
+- GitHub: [@soumya3969](https://github.com/soumya3969)
+- Repository: [ElevenLabs](https://github.com/soumya3969/ElevenLabs)
 
 ## 🤝 Contributing
 
