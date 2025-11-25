@@ -2,6 +2,10 @@
 
 A Python script for batch resizing and converting images with support for multiple formats and aspect ratio preservation.
 
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![Pillow](https://img.shields.io/badge/Pillow-10.0+-green.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 ## Features
 
 - ✅ Batch process multiple images at once
@@ -136,6 +140,19 @@ python image_resizer.py
 - Python 3.8+
 - Pillow 10.0.0+
 
+## 📚 Learning Resources
+
+- [Pillow Documentation](https://pillow.readthedocs.io/)
+- [Python os module](https://docs.python.org/3/library/os.html)
+- [Image Processing Tutorials](https://realpython.com/image-processing-with-the-python-pillow-library/)
+
+## 📞 Support
+
+For issues or questions, please open an issue on the GitHub repository.
+
+---
+
+
 ## License
 
 MIT License - Feel free to use and modify!
@@ -143,3 +160,5 @@ MIT License - Feel free to use and modify!
 ## Author
 
 Built as part of the ElevenLabs task series.
+
+**Built with ❤️ using Python and Pillow**
